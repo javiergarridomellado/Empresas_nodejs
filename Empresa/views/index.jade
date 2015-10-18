@@ -1,0 +1,59 @@
+extends layout
+
+block content
+	h1= title
+	p Bienvenido al #{title}
+
+
+	table
+		thead
+			tr
+				th Empresa
+				th Alumno
+				th Fecha de Inicio
+				th Fecha de Finalizacion
+				th Calificacion
+		tbody
+			if(empresas)
+				each empresa in empresas
+					tr
+						td=empresa.nombre
+						td=empresa.alumno
+						td=empresa.fecha_inicio
+						td=empresa.fecha_finalizacion
+						td=empresa.calificacion
+			else
+				tr
+					td=empresa.nombre
+					td=empresa.alumno
+					td=empresa.fecha_inicio
+					td=empresa.fecha_finalizacion
+					td=empresa.calificacion
+
+
+
+
+	form(method="post", action="reg_empresa")
+		br
+		br
+		br
+		label Añadir
+		br
+		br
+		label Empresa :
+		input(type="text",name="empresa",placeholder="Empresa")
+		br
+		label Alumno :
+		input(type="text",name="alumno",placeholder="Alumno")
+		br
+		label Fecha de Inicio :
+		input(type="date",name="fechainicio",placeholder="Fecha de Inicio")
+		br
+		label Fecha de Finalizacion :
+		input(type="date",name="fechafinalizacion",placeholder="Fecha de Finalizacion")
+		br
+		label Calificacion :
+		input(type="number",name="calificacion",placeholder="Calificacion")
+		br
+		input(type="submit",value="Enviar")
+  
