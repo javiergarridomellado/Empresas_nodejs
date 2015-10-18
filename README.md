@@ -1,1 +1,1 @@
-# Libreria_app_ej
+# Libreria de Empresas usando el framework Express de nodejs
